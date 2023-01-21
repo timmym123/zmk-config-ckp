@@ -9,27 +9,26 @@
 
 / {
     macros {
-    
         layer_0_rgb: layer_0_rgb {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &to 0>,
-                <&macro_tap &rgb_ug RGB_ON>,
-                <&macro_tap &rgb_ug RGB_COLOR_HSB(100,100,20)>;
+                <&macro_tap>,
+                <&to 0>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(120,100,20)>;
         };
-
         layer_1_rgb: layer_1_rgb {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &to 1>,
-                <&macro_tap &rgb_ug RGB_ON>,
-                <&macro_tap &rgb_ug RGB_COLOR_HSB(240,100,20)>;
+                <&macro_tap>,
+                <&to 1>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(240,100,20)>;
         };
-
     };
 
     keymap {
@@ -79,11 +78,11 @@
 
         KB_FN {
             bindings = <
-      &trans  &layer_0_rgb  &layer_1_rgb  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &bootloader
-      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_EFR  &trans  &rgb_ug RGB_EFF
+ &trans  &layer_0_rgb  &layer_1_rgb  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans  &trans  &bootloader
+ &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans  &trans       &trans
+ &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans  &trans
+ &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &rgb_ug RGB_BRI  &trans
+               &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_BRD  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
