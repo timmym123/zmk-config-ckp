@@ -6,25 +6,27 @@
 #define MAC  1
 #define RAISE 2
 #define KB_FN 3
+#
 
 / {
     macros {
+
         layer_1_rgb: layer_1_rgb {
             compatible = "zmk,behavior-macro";
-            label = "new_macro";
-            #binding-cells = <0>;
+            label = "layer_1_rgb";
             bindings =
                 <&macro_tap>,
-                <&tog 1 &rgb_ug RGB_COLOR_HSB(240,100,20)>;
+                <&to 1 &rgb_ug RGB_COLOR_HSB(300,100,20)>;
         };
-        new_macro: new_macro {
+
+        layer_0_rgb: layer_0_rgb {
             compatible = "zmk,behavior-macro";
-            label = "new_macro";
-            #binding-cells = <0>;
+            label = "layer_0_rgb";
             bindings =
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(0,100,42)>;
+                <&to 0 &rgb_ug RGB_COLOR_HSB(150,000,20)>;
         };
+
     };
 
     keymap {
