@@ -7,30 +7,30 @@
 #define RAISE 2
 #define KB_FN 3
 
-#define LAYER_RGB(layer)                                        \
-layer_##layer_rgb: layer_##layer_rgb {                          \
-    compatible = "zmk,behavior-macro";                          \ 
-    label = "layer_##layer_rgb";                                \
-    #binding-cells = <0>;                                       \
-    bindings =                                                  \
-        <&macro_tap &to 1>,                                     \
-        <&macro_wait_time 2000>,                                \
-        <&rgb_ug RGB_COLOR_HSB(layer * 150,100,50)>,            \
-        <&macro_wait_time 0>,                                   \
-        <&macro_tap &rgb_ug RGB_COLOR_HSB(layer * 150 ,100,15)>;\
-};
-
 / {
-
 macros {
-  LAYER_RGB(0);
-  LAYER_RGB(1);
-};
-
-macros {
-};
-
-macros {
+    layer_1_rgb: layer_1_rgb {
+        compatible = "zmk,behavior-macro";
+        label = "layer_1_rgb";
+        #binding-cells = <0>;
+        bindings =
+            <&macro_tap &to 1>,
+            <&macro_wait_time 2000>,
+            <&rgb_ug RGB_COLOR_HSB(300,100,50)>,
+            <&macro_wait_time 0>,
+            <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,15)>;
+    };
+    layer_0_rgb: layer_0_rgb {
+        compatible = "zmk,behavior-macro";
+        label = "layer_0_rgb";
+        #binding-cells = <0>;
+        bindings =
+            <&macro_tap &to 0>,
+            <&macro_wait_time 2000>,
+            <&rgb_ug RGB_COLOR_HSB(150,100,50)>,
+            <&macro_wait_time 0>,
+            <&macro_tap &rgb_ug RGB_COLOR_HSB(150,100,15)>;
+    };
 };
 
 keymap {
