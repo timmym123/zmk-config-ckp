@@ -9,14 +9,6 @@
 
 / {
     macros {
-        layer_0_rgb: layer_0_rgb {
-            compatible = "zmk,behavior-macro";
-            label = "new_macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&to 0 &rgb_ug RGB_TOG &rgb_ug RGB_TOG &rgb_ug RGB_COLOR_HSB(0,97,20)>;
-        };
         layer_1_rgb: layer_1_rgb {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
@@ -24,6 +16,14 @@
             bindings =
                 <&macro_tap>,
                 <&tog 1 &rgb_ug RGB_COLOR_HSB(240,100,20)>;
+        };
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            label = "new_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(0,100,42)>;
         };
     };
 
@@ -74,7 +74,7 @@
 
         KB_FN {
             bindings = <
- &trans                    &layer_0_rgb                      &layer_1_rgb                            &trans  &trans  &trans  &trans  &trans           &trans           &trans           &trans  &trans           &trans  &trans  &bootloader
+ &trans                      &new_macro                      &layer_1_rgb                            &trans  &trans  &trans  &trans  &trans           &trans           &trans           &trans  &trans           &trans  &trans  &bootloader
  &trans                          &trans                            &trans                            &trans  &trans  &trans  &trans  &trans           &trans           &trans           &trans  &trans           &trans  &trans       &trans
  &trans  &rgb_ug RGB_COLOR_HSB(0,96,48)  &rgb_ug RGB_COLOR_HSB(128,98,43)  &rgb_ug RGB_COLOR_HSB(320,94,31)  &trans  &trans  &trans  &trans           &trans           &trans           &trans  &trans           &trans  &trans
  &trans                          &trans                            &trans                            &trans  &trans  &trans  &trans  &trans           &trans           &trans           &trans  &trans  &rgb_ug RGB_BRI  &trans
