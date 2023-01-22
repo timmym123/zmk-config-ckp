@@ -17,20 +17,22 @@ macros {
         label = "layer_1_rgb";
         #binding-cells = <0>;
         bindings =
-            <&macro_tap>,
-            <&to 1>,
+            <&macro_tap &to 1>,
             <&macro_wait_time 2000>,
-            <&rgb_ug RGB_COLOR_HSB(300,100,50) &rgb_ug RGB_COLOR_HSB(300,100,5)>;
+            <&rgb_ug RGB_COLOR_HSB(300,100,50)>,
+            <&macro_wait_time 0>,
+            <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,15)>;
     };
     layer_0_rgb: layer_0_rgb {
         compatible = "zmk,behavior-macro";
         label = "layer_0_rgb";
         #binding-cells = <0>;
         bindings =
-            <&macro_tap>,
-            <&to 0>,
+            <&macro_tap &to 1>,
             <&macro_wait_time 2000>,
-            <&rgb_ug RGB_COLOR_HSB(15,100,50) &rgb_ug RGB_COLOR_HSB(14,100,10)>;
+            <&rgb_ug RGB_COLOR_HSB(300,100,50)>,
+            <&macro_wait_time 0>,
+            <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,15)>;
     };
 };
 
