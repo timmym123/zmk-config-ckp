@@ -15,12 +15,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&to 1>,
-                <&macro_wait_time 2000>,
-                <&rgb_ug RGB_COLOR_HSB(300,100,50)>,
-                <&macro_wait_time 0>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(300,100,15)>;
+                <&to 1 &rgb_ug RGB_COLOR_HSB(300,100,99)>;
         };
         layer_0_rgb: layer_0_rgb {
             compatible = "zmk,behavior-macro";
@@ -28,12 +23,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&to 0>,
-                <&macro_wait_time 2000>,
-                <&rgb_ug RGB_COLOR_HSB(150,100,50)>,
-                <&macro_wait_time 0>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(150,100,15)>;
+                <&to 0 &rgb_ug RGB_COLOR_HSB(150,100,98)>;
         };
         sleep_win: sleep_win {
             compatible = "zmk,behavior-macro";
