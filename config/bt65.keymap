@@ -46,9 +46,9 @@
     combos {
         compatible = "zmk,combos";
 
-        new_combo {
-            bindings = <&trans>;
-            key-positions = <>;
+        combo_bspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <37 38>;
         };
     };
 
