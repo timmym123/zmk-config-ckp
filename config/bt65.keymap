@@ -96,7 +96,7 @@
             label = "SHIFT_CAPS";
             #binding-cells = <0>;
             bindings =
-                <&sk LSHFT>,
+                <&skq LSHFT>,
                 <&caps_word>,
                 <&kp K_CANCEL>;
         };
@@ -143,6 +143,14 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        skq: skq {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SKQ";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            quick-release;
+            release-after-ms = <500>;
         };
     };
 
