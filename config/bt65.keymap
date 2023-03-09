@@ -16,7 +16,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&bt BT_SEL 0 &to 1>;
+                <&bt BT_SEL 0 &to 1 &rgb_ug RGB_COLOR_HSB(300,100,99)>;
         };
         bt1_win: bt1_win {
             compatible = "zmk,behavior-macro";
@@ -24,7 +24,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&bt BT_SEL 1 &to 0>;
+                <&bt BT_SEL 1 &to 0 &rgb_ug RGB_COLOR_HSB(150,100,98)>;
         };
         sleep_win: sleep_win {
             compatible = "zmk,behavior-macro";
@@ -168,11 +168,11 @@
             // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&longpress GRAVE TILDE     &kp N1    &kp N2    &kp N3          &kp N4    &kp N5     &kp N6  &kp N7     &kp N8    &kp N9                 &kp N0                     &kp MINUS                 &kp EQUAL         &kp BACKSPACE  &kp C_MUTE
-               &kp TAB      &kp Q     &kp W     &kp E           &kp R     &kp T      &kp Y   &kp U      &kp I     &kp O                  &kp P                      &kp LBKT                  &kp RBKT  &longpress BSLH PIPE    &kp HOME
-             &lt 2 ESC      &kp A     &kp S     &kp D           &kp F     &kp G      &kp H   &kp J      &kp K     &kp L  &longpress SEMI COLON  &longpress SQT DOUBLE_QUOTES  &longpress RET LC(ENTER)             &kp PG_UP
-           &shift_caps      &kp Z     &kp X     &kp C           &kp V     &kp B      &kp N   &kp M  &kp COMMA   &kp DOT               &kp FSLH                   &shift_caps                    &kp UP             &kp PG_DN
-                        &kp LCTRL  &kp LGUI  &kp LALT  &space_nav 2 0  &kp RALT  &kp RCTRL   &mo 3   &kp LEFT  &kp DOWN              &kp RIGHT
+&longpress GRAVE TILDE     &kp N1    &kp N2    &kp N3          &kp N4    &kp N5     &kp N6  &kp N7     &kp N8    &kp N9                    &kp N0        &longpress MINUS UNDER     &longpress EQUAL PLUS           &bspc_morph  &kp C_MUTE
+               &kp TAB      &kp Q     &kp W     &kp E           &kp R     &kp T      &kp Y   &kp U      &kp I     &kp O                     &kp P                      &kp LBKT                  &kp RBKT  &longpress BSLH PIPE    &kp HOME
+             &lt 2 ESC      &kp A     &kp S     &kp D           &kp F     &kp G      &kp H   &kp J      &kp K     &kp L     &longpress SEMI COLON  &longpress SQT DOUBLE_QUOTES  &longpress RET LC(ENTER)             &kp PG_UP
+           &shift_caps      &kp Z     &kp X     &kp C           &kp V     &kp B      &kp N   &kp M  &kp COMMA   &kp DOT  &longpress FSLH QUESTION                   &shift_caps                    &kp UP             &kp PG_DN
+                        &kp LCTRL  &kp LGUI  &kp LALT  &space_nav 2 0  &kp RALT  &kp RCTRL   &mo 3   &kp LEFT  &kp DOWN                 &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -191,13 +191,13 @@
         NAV {
             bindings = <
      &trans         &kp F1     &kp F2      &kp F3            &kp F4  &kp F5  &kp F6    &kp F7      &kp F8        &kp F9     &kp F10  &kp F11           &kp F12  &kp DEL  &kp PRINTSCREEN
-&kp LG(TAB)     &kp LA(F4)     &trans      &trans            &trans  &trans  &trans    &trans      &kp UP        &trans      &trans   &trans            &trans   &trans          &kp END
+&kp LG(TAB)         &trans     &trans      &trans            &trans  &trans  &trans    &trans      &kp UP        &trans      &trans   &trans            &trans   &trans          &kp END
      &trans  &skq LEFT_ALT  &skq LGUI  &skq LSHFT        &skq LCTRL  &trans  &trans  &kp LEFT    &kp DOWN     &kp RIGHT      &trans   &trans  &kp C_PLAY_PAUSE   &trans
      &trans         &trans     &trans      &trans            &trans  &trans  &trans    &trans      &trans        &trans      &trans   &trans      &kp C_VOL_UP   &trans
                     &trans     &trans      &trans  &kp C_PLAY_PAUSE  &trans  &trans    &trans  &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>;
+            sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
         };
 
         ADJ {
