@@ -116,7 +116,7 @@
             label = "SPACE_MORPH";
             bindings =
                 <&kp SPACE>,
-                <&space_morph>;
+                <&spc_dot_shift>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -130,9 +130,9 @@
 
             #binding-cells = <2>;
             global-quick-tap;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <250>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
         bspc_morph: bspc_morph {
             compatible = "zmk,behavior-mod-morph";
