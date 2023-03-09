@@ -53,11 +53,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_bspc {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <37 38>;
-        };
-
         combo_adj {
             bindings = <&smo 3>;
             key-positions = <1 2 3 4>;
@@ -74,6 +69,16 @@
             bindings = <&longpress LG(C) LG(V)>;
             key-positions = <47 48>;
             layers = <1>;
+        };
+
+        combo_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <37 36>;
+        };
+
+        combo_bspc {
+            bindings = <&bspc_morph>;
+            key-positions = <24 23>;
         };
     };
 
@@ -128,6 +133,16 @@
             quick-tap-ms = <200>;
             flavor = "balanced";
             tapping-term-ms = <200>;
+        };
+        bspc_morph: bspc_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BSPC_MORPH";
+            bindings =
+                <&kp BSPC>,
+                <&kp DEL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
