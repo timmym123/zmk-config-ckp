@@ -176,6 +176,33 @@
             quick-release;
             release-after-ms = <500>;
         };
+        nav_t: nav_t {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NAV_T";
+            bindings =
+                <&mo>,
+                <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            tapping-term-ms = <180>;
+            hold-trigger-key-positions = <36 37 38 39>;
+            global-quick-tap;
+            flavor = "tap-preferred";
+        };
+        shf_t: shf_t {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHF_T";
+            bindings =
+                <&kp>,
+                <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <180>;
+            hold-trigger-on-release;
+        };
     };
 
     keymap {
@@ -191,11 +218,11 @@
             // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&longpress TILDE GRAVE     &kp N1    &kp N2    &kp N3              &kp N4    &kp N5     &kp N6  &kp N7     &kp N8    &kp N9                      &kp N0  &longpress UNDERSCORE MINUS        &longpress PLUS EQUAL           &bspc_morph  &kp C_MUTE
-&longpress LG(TAB) TAB      &kp Q     &kp W     &kp E               &kp R     &kp T      &kp Y   &kp U      &kp I     &kp O                       &kp P   &longpress LBKT LEFT_BRACE  &longpress RBKT RIGHT_BRACE  &longpress PIPE BSLH    &kp HOME
-             &lt 2 ESC      &kp A     &kp S     &kp D               &kp F     &kp G      &kp H   &kp J      &kp K     &kp L  &longpress COLON SEMICOLON           &longpress DQT SQT     &longpress LC(RET) ENTER             &kp PG_UP
-           &shift_caps      &kp Z     &kp X     &kp C  &longpress LC(V) V     &kp B      &kp N   &kp M  &kp COMMA   &kp DOT      &longpress QMARK SLASH                  &shift_caps                       &kp UP             &kp PG_DN
-                        &kp LCTRL  &kp LGUI  &kp LALT      &space_nav 2 0  &kp RALT  &kp RCTRL   &mo 3   &kp LEFT  &kp DOWN                   &kp RIGHT
+&longpress TILDE GRAVE          &kp N1    &kp N2    &kp N3       &kp N4    &kp N5     &kp N6  &kp N7     &kp N8    &kp N9                      &kp N0  &longpress UNDERSCORE MINUS        &longpress PLUS EQUAL           &bspc_morph  &kp C_MUTE
+&longpress LG(TAB) TAB           &kp Q     &kp W     &kp E        &kp R     &kp T      &kp Y   &kp U      &kp I     &kp O                       &kp P   &longpress LBKT LEFT_BRACE  &longpress RBKT RIGHT_BRACE  &longpress PIPE BSLH    &kp HOME
+             &lt 2 ESC      &nav_t 2 A     &kp S     &kp D        &kp F     &kp G      &kp H   &kp J      &kp K     &kp L  &longpress COLON SEMICOLON           &longpress DQT SQT     &longpress LC(RET) ENTER             &kp PG_UP
+           &shift_caps  &shf_t LSHFT Z     &kp X     &kp C        &kp V     &kp B      &kp N   &kp M  &kp COMMA   &kp DOT          &shf_t LSHFT SLASH                  &shift_caps                       &kp UP             &kp PG_DN
+                             &kp LCTRL  &kp LGUI  &kp LALT  &lt 5 SPACE  &kp RALT  &kp RCTRL   &mo 3   &kp LEFT  &kp DOWN                   &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -245,6 +272,16 @@
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+        };
+
+        num {
+            bindings = <
+&trans         &trans          &trans           &trans     &trans        &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(TILDE)        &kp LBKT  &kp RIGHT_BRACE   &kp SEMI  &kp LS(PLUS)  &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp N0  &trans  &trans  &trans  &trans
+&trans      &kp GRAVE  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp COLON      &kp LBRC  &kp MINUS  &kp N4  &kp N5  &kp N6  &trans  &trans  &trans  &trans
+&trans         &trans    &kp LS(LPAR)     &kp LS(RPAR)      &none  &kp LS(PIPE)   &kp BSLH  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans  &trans
+               &trans          &trans           &trans     &trans        &trans     &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
