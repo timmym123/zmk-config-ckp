@@ -222,7 +222,7 @@
 &longpress LG(TAB) TAB           &kp Q     &kp W     &kp E        &kp R     &kp T      &kp Y   &kp U      &kp I     &kp O                       &kp P   &longpress LBKT LEFT_BRACE  &longpress RBKT RIGHT_BRACE  &longpress PIPE BSLH    &kp HOME
              &lt 2 ESC      &nav_t 2 A     &kp S     &kp D        &kp F     &kp G      &kp H   &kp J      &kp K     &kp L  &longpress COLON SEMICOLON           &longpress DQT SQT     &longpress LC(RET) ENTER             &kp PG_UP
            &shift_caps  &shf_t LSHFT Z     &kp X     &kp C        &kp V     &kp B      &kp N   &kp M  &kp COMMA   &kp DOT          &shf_t LSHFT SLASH                  &shift_caps                       &kp UP             &kp PG_DN
-                             &kp LCTRL  &kp LGUI  &kp LALT  &lt 5 SPACE  &kp RALT  &kp RCTRL   &mo 3   &kp LEFT  &kp DOWN                   &kp RIGHT
+                             &kp LCTRL  &kp LGUI  &kp LALT  &lt 5 SPACE  &kp RALT  &kp RCTRL   &mo 4   &kp LEFT  &kp DOWN                   &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
