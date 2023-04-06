@@ -186,7 +186,7 @@
             #binding-cells = <2>;
             quick-tap-ms = <200>;
             tapping-term-ms = <250>;
-            hold-trigger-key-positions = <36 37 38 39 23>;
+            hold-trigger-key-positions = <36 37 38 39 23 22>;
             global-quick-tap;
             flavor = "hold-preferred";
         };
@@ -264,7 +264,7 @@
 
         ADJ {
             bindings = <
-&trans  &bt0_mac    &bt1_win  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans  &bt BT_CLR  &bootloader
+&tog 6  &bt0_mac    &bt1_win  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans  &bt BT_CLR  &bootloader
 &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans      &trans       &trans
 &trans    &trans  &sleep_win  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans           &trans      &trans
 &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &rgb_ug RGB_BRI      &trans
@@ -281,6 +281,16 @@
 &trans      &kp GRAVE  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp COLON      &kp LBRC  &kp MINUS  &kp N4  &kp N5  &kp N6  &trans  &trans  &trans  &trans
 &trans         &trans    &kp LS(LPAR)     &kp LS(RPAR)      &none  &kp LS(PIPE)   &kp BSLH  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans  &trans
                &trans          &trans           &trans     &trans        &trans     &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        block {
+            bindings = <
+&to 0  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+       &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
             >;
         };
     };
